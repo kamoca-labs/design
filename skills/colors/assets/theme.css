@@ -1,0 +1,65 @@
+/* Framework-neutral seed. Adapt to the approved identity; verify rendered pairs.
+   Hex values keep this example portable. Existing OKLCH themes stay OKLCH. */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  /* Nested neutral containers: bg-1 -> bg-2 -> bg-1. */
+  --bg-1: #f1f5f9;
+  --fg-1: #0f172a;
+  --bg-2: #ffffff;
+  --fg-2: #0f172a;
+  --overlay: #ffffff;
+  --overlay-foreground: #0f172a;
+  --field: #ffffff;
+  --field-foreground: #0f172a;
+  --field-hover: #f1f5f9;
+  --muted: #475569;
+  --link: #1d4ed8;
+  --accent: #1d4ed8;
+  --accent-foreground: #ffffff;
+  --accent-hover: #1e40af;
+  --accent-pressed: #1e3a8a;
+  --success: #166534;
+  --success-foreground: #ffffff;
+  --warning: #854d0e;
+  --warning-foreground: #ffffff;
+  --danger: #991b1b;
+  --danger-foreground: #ffffff;
+  --info: #075985;
+  --info-foreground: #ffffff;
+  --separator: #cbd5e1;
+  --control-border: #64748b;
+  --focus-ring: #1d4ed8;
+  --backdrop: rgb(15 23 42 / 55%);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-1: #0f172a;
+  --fg-1: #f8fafc;
+  --bg-2: #1e293b;
+  --fg-2: #f8fafc;
+  --overlay: #1e293b;
+  --overlay-foreground: #f8fafc;
+  --field: #0f172a;
+  --field-foreground: #f8fafc;
+  --field-hover: #1e293b;
+  --muted: #cbd5e1;
+  --link: #93c5fd;
+  --accent: #93c5fd;
+  --accent-foreground: #0f172a;
+  --accent-hover: #bfdbfe;
+  --accent-pressed: #dbeafe;
+  --success: #86efac;
+  --success-foreground: #052e16;
+  --warning: #fde68a;
+  --warning-foreground: #422006;
+  --danger: #fca5a5;
+  --danger-foreground: #450a0a;
+  --info: #7dd3fc;
+  --info-foreground: #082f49;
+  --separator: #475569;
+  --control-border: #94a3b8;
+  --focus-ring: #93c5fd;
+  --backdrop: rgb(0 0 0 / 70%);
+}

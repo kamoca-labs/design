@@ -1,0 +1,368 @@
+{
+  "repository": "https://github.com/pbakaus/impeccable",
+  "commit": "24aa2547f1d80e8d0edd767d9b76bc0bb65a3b6b",
+  "version": "4.8.0",
+  "sourceDirectory": ".claude/skills/impeccable",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sourcePath": ".claude/skills/impeccable/SKILL.md",
+      "blob": "ff0426b809d4d028b2183495665dd252f86a95e1",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/adapt.md",
+      "sourcePath": ".claude/skills/impeccable/reference/adapt.md",
+      "blob": "cabc0fde53348f032a2fc6e26d526e90fa6c2ed2",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/adapt.native.md",
+      "sourcePath": ".claude/skills/impeccable/reference/adapt.native.md",
+      "blob": "877871aa0314ab96814f5794ffabda43ac986fea",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/android.md",
+      "sourcePath": ".claude/skills/impeccable/reference/android.md",
+      "blob": "32a5cf7ccfd78afe659f10f80cca6bbb3ef7de69",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/animate.md",
+      "sourcePath": ".claude/skills/impeccable/reference/animate.md",
+      "blob": "4ae4cc5fcd7ae4341f4f130ab67a7d9b03c00562",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/audit.md",
+      "sourcePath": ".claude/skills/impeccable/reference/audit.md",
+      "blob": "41033f119b6265176e1fdc34a6c2ad1e004c16ac",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/audit.native.md",
+      "sourcePath": ".claude/skills/impeccable/reference/audit.native.md",
+      "blob": "2f5ac5143c99dd93dfbc5871089a569ed3ee7223",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/bolder.md",
+      "sourcePath": ".claude/skills/impeccable/reference/bolder.md",
+      "blob": "d90e62d0d90f6872b5895158017ac25644e15cb9",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/clarify.md",
+      "sourcePath": ".claude/skills/impeccable/reference/clarify.md",
+      "blob": "3047a9d82b9cfa31b392e35c643d82bcdb50250a",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/colorize.md",
+      "sourcePath": ".claude/skills/impeccable/reference/colorize.md",
+      "blob": "dc45f88c5f81c61355a915c6ea1391b1a36c9ba8",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/component-review.md",
+      "sourcePath": ".claude/skills/impeccable/reference/component-review.md",
+      "blob": "0e96a9d2ceba25197ab8cb6b08dd62eb4b107d2a",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/craft-floor.md",
+      "sourcePath": ".claude/skills/impeccable/reference/craft-floor.md",
+      "blob": "1f2bb82a2a58c3e90189efcb7884eb3c028bc6cc",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/craft.md",
+      "sourcePath": ".claude/skills/impeccable/reference/craft.md",
+      "blob": "dbbc9402c07cdab21f2b6eb69279b8435fecfd7f",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/critique.md",
+      "sourcePath": ".claude/skills/impeccable/reference/critique.md",
+      "blob": "19feee5d5201ccee8e29e68f401b8bbeedab09d5",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/degraded/asset-producer.md",
+      "sourcePath": ".claude/skills/impeccable/reference/degraded/asset-producer.md",
+      "blob": "f66db53260d8a90fcf0af57995f89b55cf6247ee",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/degraded/documenter.md",
+      "sourcePath": ".claude/skills/impeccable/reference/degraded/documenter.md",
+      "blob": "d1640cc06f909cd6bda8c44ad70f85351bab7387",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/degraded/finish-reviewer.md",
+      "sourcePath": ".claude/skills/impeccable/reference/degraded/finish-reviewer.md",
+      "blob": "b5023c11fe6065f36a73b5b9872261c96dcf6cf6",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/degraded/manual-edit-applier.md",
+      "sourcePath": ".claude/skills/impeccable/reference/degraded/manual-edit-applier.md",
+      "blob": "7f2bdb65d1c708e32c56b6dd3c2695208692a901",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/delight.md",
+      "sourcePath": ".claude/skills/impeccable/reference/delight.md",
+      "blob": "798c43a5b735a5b75b67484c516821f1355dfbd6",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/distill.md",
+      "sourcePath": ".claude/skills/impeccable/reference/distill.md",
+      "blob": "d7c525d922900a051d0eacc8a50df70c693369f0",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/doctor.md",
+      "sourcePath": ".claude/skills/impeccable/reference/doctor.md",
+      "blob": "438b8aac8d91430ae6ee7384c15a3fced3108b3b",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/document.md",
+      "sourcePath": ".claude/skills/impeccable/reference/document.md",
+      "blob": "879ba4e86e3a8d37d0452d1c8053b49456f781b8",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/extract.md",
+      "sourcePath": ".claude/skills/impeccable/reference/extract.md",
+      "blob": "4c6255cf2430048b90391ade163ebd2dce88492a",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/generate.md",
+      "sourcePath": ".claude/skills/impeccable/reference/generate.md",
+      "blob": "447e8527d10ee37e3b0a1677d37d5b31efa81141",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/harden.md",
+      "sourcePath": ".claude/skills/impeccable/reference/harden.md",
+      "blob": "e7183cfab285807bfad71dfbf6409e00b6ce5da1",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/hooks.md",
+      "sourcePath": ".claude/skills/impeccable/reference/hooks.md",
+      "blob": "7bf2a7d9c9b69e08c4a8d8b3e3a4c1dfe5603921",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/init.md",
+      "sourcePath": ".claude/skills/impeccable/reference/init.md",
+      "blob": "d1b8f01cad65aef84aa28d985d76b9c8961f9c7f",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/ios.md",
+      "sourcePath": ".claude/skills/impeccable/reference/ios.md",
+      "blob": "c6244dfe32176e5718d86211b7d1eb5601eb0860",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/layout.md",
+      "sourcePath": ".claude/skills/impeccable/reference/layout.md",
+      "blob": "7f3b30d80964a21776ec9dd7bb2a9d5db0075003",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/live-setup.md",
+      "sourcePath": ".claude/skills/impeccable/reference/live-setup.md",
+      "blob": "670ecc737035debe4783a7c15394ea14ac26c915",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/live.md",
+      "sourcePath": ".claude/skills/impeccable/reference/live.md",
+      "blob": "6cc5a69139db11fb40b56b39be3d8966d73b2bb7",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/mode-operate.md",
+      "sourcePath": ".claude/skills/impeccable/reference/mode-operate.md",
+      "blob": "833775ba85f03bf65a4c1b23e39192f7653414e6",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/mode-persuade.md",
+      "sourcePath": ".claude/skills/impeccable/reference/mode-persuade.md",
+      "blob": "9c152d67064fb8453a7eaa89de20c35fc115b085",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/mode-read.md",
+      "sourcePath": ".claude/skills/impeccable/reference/mode-read.md",
+      "blob": "b30c4c9139e3094bd35c60738decb6109326153f",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/new-work.md",
+      "sourcePath": ".claude/skills/impeccable/reference/new-work.md",
+      "blob": "2fc6d54a21ac43501769aba36384553c105576d4",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/onboard.md",
+      "sourcePath": ".claude/skills/impeccable/reference/onboard.md",
+      "blob": "464ae5516e2623ef4be8260a33968548b33ae697",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/operate.md",
+      "sourcePath": ".claude/skills/impeccable/reference/operate.md",
+      "blob": "524f2c3ae9fa497284e9699f3ca5320cce5d05cf",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/optimize.md",
+      "sourcePath": ".claude/skills/impeccable/reference/optimize.md",
+      "blob": "3f3fc7c33e21b029d5888112a566a547f30a3520",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/overdrive.md",
+      "sourcePath": ".claude/skills/impeccable/reference/overdrive.md",
+      "blob": "01a1cb131f7bfda4e438dc7a8ff4b7530c07f7f9",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/polish.md",
+      "sourcePath": ".claude/skills/impeccable/reference/polish.md",
+      "blob": "d981459468a485dc3b3e8add112ea0f5e6b9e576",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/quieter.md",
+      "sourcePath": ".claude/skills/impeccable/reference/quieter.md",
+      "blob": "bcd4f8a6948f741996777b156f3706955cc802ff",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/region-map.md",
+      "sourcePath": ".claude/skills/impeccable/reference/region-map.md",
+      "blob": "1d33c7b4a61f6590484c42847499a10beb4b93ca",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/routing.md",
+      "sourcePath": ".claude/skills/impeccable/reference/routing.md",
+      "blob": "e41a143fdab06e4545640896a3f9b7516e6d1b2f",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/shape.md",
+      "sourcePath": ".claude/skills/impeccable/reference/shape.md",
+      "blob": "90a74ae813331cbce8fff6beb498ced77970fadf",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/typeset.md",
+      "sourcePath": ".claude/skills/impeccable/reference/typeset.md",
+      "blob": "87a33d3e119e001ac04174be0aaed0ed0a5f72ca",
+      "mode": "100644"
+    },
+    {
+      "path": "reference/visualize.md",
+      "sourcePath": ".claude/skills/impeccable/reference/visualize.md",
+      "blob": "88c09cbbe5be3e301c8534a07be325271c6a1802",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/VERSION",
+      "sourcePath": ".claude/skills/impeccable/scripts/VERSION",
+      "blob": "f8bc4c6256ab7d4bb54c2ab7af94c4fa5e58ac56",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/command-metadata.json",
+      "sourcePath": ".claude/skills/impeccable/scripts/command-metadata.json",
+      "blob": "4686bb6deea643493198bff1369bc2958b3909a7",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/data/font-index-failures.json",
+      "sourcePath": ".claude/skills/impeccable/scripts/data/font-index-failures.json",
+      "blob": "1aca67220413ef163570c75405b444d7a27a32be",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/data/font-index.json",
+      "sourcePath": ".claude/skills/impeccable/scripts/data/font-index.json",
+      "blob": "9d2029971df232a72ff6584d264c104490521742",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/engine-checksums.txt",
+      "sourcePath": ".claude/skills/impeccable/scripts/engine-checksums.txt",
+      "blob": "2e948006a8ac3cb811b775f88b131def849f2237",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/impeccable",
+      "sourcePath": ".claude/skills/impeccable/scripts/impeccable",
+      "blob": "0b31c9e1b9921cdb443aa735a06ac2707259e475",
+      "mode": "100755"
+    },
+    {
+      "path": "scripts/impeccable.cmd",
+      "sourcePath": ".claude/skills/impeccable/scripts/impeccable.cmd",
+      "blob": "6157693b75c837249060089f2240b363d38e8023",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/live-browser-dom.js",
+      "sourcePath": ".claude/skills/impeccable/scripts/live-browser-dom.js",
+      "blob": "ef1ca8928111080ddb923da14c7827b7396a9e62",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/live-browser-ignores.js",
+      "sourcePath": ".claude/skills/impeccable/scripts/live-browser-ignores.js",
+      "blob": "1a2912e57a3b2b10a0d961b5dfe568253133fe53",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/live-browser-session.js",
+      "sourcePath": ".claude/skills/impeccable/scripts/live-browser-session.js",
+      "blob": "6871770720d3dd7a284c545e20b97b613635f36f",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/live-browser.js",
+      "sourcePath": ".claude/skills/impeccable/scripts/live-browser.js",
+      "blob": "1c140fa0ea49162c4e42c3c96a332f751e0667ca",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/modern-screenshot.umd.js",
+      "sourcePath": ".claude/skills/impeccable/scripts/modern-screenshot.umd.js",
+      "blob": "a9c5208f6b141d3bafdb8eb843d6fcbdcf23e370",
+      "mode": "100644"
+    },
+    {
+      "path": "LICENSE",
+      "sourcePath": "LICENSE",
+      "blob": "bb3f6d23b1f8025514a62a12b51b47d73e3c9aa9",
+      "mode": "100644"
+    },
+    {
+      "path": "NOTICE.md",
+      "sourcePath": "NOTICE.md",
+      "blob": "0468271c904ae334cfaf27da6f8df3d5f419a1f0",
+      "mode": "100644"
+    }
+  ]
+}
