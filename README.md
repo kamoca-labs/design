@@ -1,73 +1,125 @@
 <p align="center">
-  <img src="./assets/icon.png" alt="Multicolored chameleon with design construction guides" width="180">
+  <img src="./assets/icon.png" alt="Design plugin chameleon blueprint icon" width="180">
 </p>
 
 # Plugin `design`
 
-Design systems and complete interfaces, powered by a pinned Impeccable distribution. Install this plugin once; a separate Impeccable plugin is not required. Marketplace registration is maintained in the kamoca-labs/marketplace repository.
+## Contents
 
-Once the marketplace registration is merged, install with:
+- [Installation](#installation)
+- [Overview](#overview)
+- [Commands](#commands)
+- [Rules](#rules)
+- [Project artifacts](#project-artifacts)
+- [Integrations and runtime](#integrations-and-runtime)
+- [Files](#files)
+- [Use cases](USAGE.md)
+- [Release notes](CHANGELOG.md)
+
+## Installation
 
 ```bash
 claude plugin marketplace add kamoca-labs/marketplace
 claude plugin install design@kamoca
 ```
 
-For local review, start Claude Code with `claude --plugin-dir ./design` from this workspace. The plugin follows the same `skills/<name>/SKILL.md` layout as craft and docker.
+The commands appear in the next session. Update steps are in the [marketplace guide](https://github.com/kamoca-labs/marketplace/blob/main/USAGE.md#update-after-editing). Impeccable is bundled; a separate installation is not required.
 
-CLAUDE.md at the plugin root is for maintaining this repository; Claude Code does not inject it as runtime plugin context. Runtime rules are carried by the skills and their shared workflow.
+With craft's `atdd-first` hook enabled, use craft 0.16.0 or later. Python 3.9+ is needed only for this repository's verification script. Optional design tools have their own runtime and authentication requirements.
+
+## Overview
+
+Design systems and complete interfaces, with **a reviewable mockup before product implementation**. The entry point `/design:design` reads project context, prepares applicable screen states and responsive variants, and iterates with the user. Implementation starts after explicit approval of the current proposal.
+
+`/design:setup` records the existing system in DESIGN.md. Token files and components define runtime values; the document explains their roles. Missing documentation does not authorize replacing an established identity.
+
+The plugin extends pinned Impeccable guidance with setup, alternating backgrounds, state coverage, responsive checks and mockup approval. Behavior follows the project's test workflow, including `/craft:atdd` when applicable. Visual-only work uses `/design:style`.
 
 ## Commands
 
-| Command | Purpose |
+| Command | Arguments | What it does |
+|---|---|---|
+| `/design:design` | `[action or request] [target]` | Main entry point. Prepares a state-complete responsive proposal before implementation approval; supports bundled actions such as typeset, animate, shape, harden and polish |
+| `/design:setup` | `[project or scope]` | Inspects themes, typography, components and breakpoints; creates or merges DESIGN.md from evidence |
+| `/design:style` | `<visual change>` | Iterates a visual-only mockup, implements the approved proposal and runs relevant existing functional checks |
+| `/design:mockup` | `[screen or idea]` | Creates an inspectable local artifact or Figma/FigCraft draft with applicable states and responsive compositions |
+| `/design:states` | `[screen or flow]` | Defines variants, triggers, recovery, preserved input and verification evidence |
+| `/design:system` | `[scope]` | Consolidates tokens and patterns while preserving the stack and approved identity |
+| `/design:connect` | `[figma\|figcraft\|tool]` | Discovers tools and configures the requested optional MCP integration |
+| `/design:review` | `[scope]` | Reviews rendered UI, contrast, accessibility, responsiveness and state coverage; fixes only when requested |
+
+Plugin commands carry the prefix: `/design:design`, not `/design` alone.
+
+### Sub-skills
+
+These stay out of the slash menu (`user-invocable: false`). Entry points load the relevant skills through the Skill tool. State and responsive assessment apply to every UI change.
+
+| Skill | Topic |
 |---|---|
-| `/design:setup [scope]` | Inspect the project and create or update DESIGN.md from evidence |
-| `/design:design [request]` | Build/refine UI, or pass an Impeccable action such as `typeset`, `animate`, `shape`, `harden` or `polish` |
-| `/design:style <change>` | Iterate on visual-only changes; migrated from craft:style |
-| `/design:mockup [idea]` | Produce a state-complete responsive proposal and iterate before implementation approval |
-| `/design:states [screen]` | Define applicable screen/control states and their verification |
-| `/design:system [scope]` | Consolidate existing tokens and reusable component patterns |
-| `/design:connect [tool]` | Inspect or set up an optional Figma/FigCraft MCP integration |
-| `/design:review [scope]` | Report visual, accessibility and state coverage findings; fix only when requested |
+| `design:colors` | Alternating neutral backgrounds, paired foregrounds, actions, statuses and themes |
+| `design:contrast` | Measured text, control and focus contrast on actual backgrounds |
+| `design:typography` | Text roles, loading, hierarchy, reading, localization and numeric content |
+| `design:patterns` | Navigation, forms, tables, filters, dialogs, feedback and assets |
+| `design:motion` | Purposeful animation, shared tokens, interruption and reduced motion |
+| `design:responsive` | Shared breakpoints, content-driven adaptation and intermediate widths |
+| `design:figma` | Structured context, variables, assets, component mappings and requested canvas work |
+| `design:figcraft` | Frames, auto layout, components, variants, prototypes and rendered checks |
 
-The entry points load the shared workflow and relevant domain skills: colors, contrast, typography, patterns, motion, responsiveness, Figma and FigCraft. Those domain skills stay out of the command menu. Every UI workflow assesses states and responsive behavior using the project's shared breakpoints, including intermediate widths; an isolated typography edit does not authorize building unrelated error screens.
+## Rules
 
-## Proposal gate
+| Rule | How it applies |
+|---|---|
+| Mockup before implementation | Present applicable states and responsive variants, then wait for explicit approval. Reuse approval for the same proposal/scope; substantial changes return to review |
+| Complete states | Assess main, first-use, empty, no-results, loading, submitting, success, error, offline, access, destructive and content-extreme states. Document non-applicable categories |
+| Responsive at every state | Reuse project breakpoints. Check representative widths, intermediate sizes and the edges of changed breakpoints, with relevant states, long content and zoom |
+| Alternating backgrounds | Nested neutral containers use `bg-1 → bg-2 → bg-1`. Count meaningful groups, not every DOM wrapper |
+| Paired foregrounds | Each background has its text/icon partner. Actions, statuses, fields and overlays retain their semantic roles; measure actual contrast |
+| Behavior tests | Test actions, outcomes, functional visibility and semantics. Never assert decorative colors, exact sizes, CSS classes, spacing or animation time. A separate screenshot suite requires an explicit request |
+| Rendered verification | Inspect affected routes, widths, themes and states. Report evidence and checks that could not run |
+| Preserve scope | Reuse existing tokens and components. Report unrelated defects rather than turning a small change into a redesign |
 
-UI creation and changes start with an isolated reviewable artifact or a Figma/FigCraft draft, containing every applicable screen/control state and relevant responsive composition. The user iterates on that proposal and explicitly approves its current version before product implementation begins. Approval and scope are recorded in the project. Substantial proposal changes return to review; documentation and review-only tasks can proceed without this gate.
-
-## Testing boundary
-
-Functional automated tests (unit, component, integration and E2E) verify behavior, meaningful visibility and accessibility semantics. They never lock decorative UI to a particular color, exact size, CSS class, spacing or animation time. Appearance is reviewed in the rendered result. A dedicated visual-regression suite requires an explicit request and stays separate from behavioral assertions.
-
-## Color contract
-
-Nested neutral containers alternate two background roles: `bg-1 → bg-2 → bg-1 → bg-2`. A third nesting level reuses the first background instead of introducing a third shade. Each background has its foreground partner (`fg-1` or `fg-2`). Action, status, field and overlay colors retain their own semantic roles. Names do not guarantee contrast: measure the actual text/background pair in each supported theme and interaction state.
-
-The framework-neutral starter is `skills/colors/assets/theme.css`. It is an example, not an automatic palette replacement. Existing projects keep their token names through a mapping in DESIGN.md.
+These are skill instructions. This version installs no design detector hook or mechanical mockup-approval gate. The craft hook recognizes the loaded `design:style` flow; it does not independently validate approval records.
 
 ## Project artifacts
 
-- `DESIGN.md`: system overview, semantic roles, typography, layout, components and decisions, with relative links to implementation.
-- `docs/design/states/<screen>.md`: state matrix and evidence for screens in scope.
-- Existing token/theme/component files: authoritative runtime values.
-- Optional Impeccable PRODUCT.md and `.impeccable/` artifacts: retain upstream compatibility; do not create competing product briefs.
+| Artifact | Purpose |
+|---|---|
+| `DESIGN.md` | System decisions, semantic roles, typography, layout and component conventions |
+| Existing theme/token/component files | Authoritative runtime values and APIs |
+| `docs/design/states/<screen>.md` | Applicable variants, triggers, recovery and evidence |
+| `docs/design/mockups/<screen>/` | Local proposals, separate from production source, with approval records |
+| Optional PRODUCT.md and `.impeccable/` files | Preserve upstream context compatibility |
 
-Templates are bundled with setup and states. They are filled from the target project, not copied as an invented identity. Connector configuration belongs to the target project's existing MCP configuration, not this plugin's global configuration.
+Fill templates from project evidence. The starter palette is an example, not an automatic brand replacement. Map existing token names in DESIGN.md. Connector configuration belongs to the target project.
 
-## Upstream and runtime
+## Integrations and runtime
 
-Impeccable 4.8.0 is bundled under `upstream/impeccable/`; the exact commit and Git blob hashes are in `upstream.lock.json`. The files are not registered as a second discoverable skill: our entry points read its SKILL.md and selected playbooks directly, resolving every launcher path to the bundled directory.
+Figma and the standalone FigCraft editor are optional. Inspect actual capabilities, preserve other MCP settings and verify the requested connection. Configuration examples bundle no credentials; installation does not supply account access.
 
-The upstream launcher may download a checksum-verified native engine on first use. Engine, interactive login and network-dependent tools were not exercised in this draft. If the engine is unavailable, its documented manual workflow remains usable. There are no automatic hooks in this first version; do not claim the upstream detector hook is installed.
+Impeccable 4.8.0 is under `upstream/impeccable/`, pinned by commit and Git blob hashes in `upstream.lock.json`. Local entry points read its guidance rather than registering a second skill. Its launcher may download a checksum-verified native engine on first use. Use the documented fallback when unavailable; report checks that did not run.
 
-The migrated style flow needs craft 0.16.0 or later when craft's `atdd-first` hook is enabled. Older versions recognize only the retired craft:style name. The mockup approval gate is expressed in the design workflow instructions; the craft hook recognizes the loaded style flow and does not independently validate approval records.
+The root CLAUDE.md is maintainer guidance; runtime instructions live in skills. See [UPSTREAM.md](UPSTREAM.md) for updates.
 
-To update, use the procedure in `UPSTREAM.md`. Run `python3 scripts/verify.py` to check packaging, upstream integrity, local Markdown links and the sample palette's contrast. This does not prove live Claude loading, visual correctness or WCAG conformance of a consuming application.
+## Files
+
+| Path | Role |
+|---|---|
+| `.claude-plugin/plugin.json` | Metadata and version |
+| `skills/<command>/SKILL.md` | Public commands and private domain guidance |
+| `skills/design/references/workflow.md` | Shared context, approval and verification workflow |
+| `skills/setup/assets/DESIGN.md` | Project-system template |
+| `skills/states/assets/surface.md` | State contract template |
+| `skills/colors/assets/theme.css` | Paired neutral-background example |
+| `skills/{figma,figcraft}/assets/mcp.example.json` | Optional connector configuration fragments |
+| `upstream/impeccable/` and `upstream.lock.json` | Unmodified pinned distribution and inventory |
+| `scripts/verify.py` | Static package, link, upstream-integrity and sample-contrast checks |
+| [USAGE.md](USAGE.md) | Workflow examples |
+| [CHANGELOG.md](CHANGELOG.md) | Release notes |
+
+Run `python3 scripts/verify.py` and `claude plugin validate .`. These do not prove live connector behavior, rendered layouts or application-wide accessibility.
 
 ## Sources and licensing
 
-- [Impeccable](https://github.com/pbakaus/impeccable): bundled skill, playbooks and runtime support, Apache-2.0; original license and third-party notices retained in its directory.
-- [WCAG text contrast](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html) and [non-text contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html): measurement criteria.
+Local extensions use [MIT](LICENSE). Bundled [Impeccable](https://github.com/pbakaus/impeccable) uses Apache-2.0; its [license](upstream/impeccable/LICENSE) and [notices](upstream/impeccable/NOTICE.md) are retained. No upstream affiliation or review is implied.
 
-Local extensions are MIT licensed. Neither upstream affiliation nor upstream review is implied.
+Contrast guidance refers to [WCAG text contrast](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html) and [non-text contrast](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html).
