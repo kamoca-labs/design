@@ -4,7 +4,14 @@
 
 # Plugin `design`
 
-Design systems and complete interfaces, powered by a pinned Impeccable distribution. Install this plugin once; a separate Impeccable plugin is not required. No marketplace registration or publication is included in this draft.
+Design systems and complete interfaces, powered by a pinned Impeccable distribution. Install this plugin once; a separate Impeccable plugin is not required. Marketplace registration is maintained in the kamoca-labs/marketplace repository.
+
+Once the marketplace registration is merged, install with:
+
+```bash
+claude plugin marketplace add kamoca-labs/marketplace
+claude plugin install design@kamoca
+```
 
 For local review, start Claude Code with `claude --plugin-dir ./design` from this workspace. The plugin follows the same `skills/<name>/SKILL.md` layout as craft and docker.
 
