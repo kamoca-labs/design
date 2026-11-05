@@ -1,5 +1,28 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- The plugin uses progressive disclosure. Only the eight entry skills are visible to Claude: `design`, `style`, `review`, `mockup`, `setup`, `system`, `connect` and `states`. The skill listing drops from 16 skills and 2,549 description characters to 8 skills and 1,900 characters.
+- Eight skills are now reference files. Claude reads them with the Read tool only when a case needs them. The old skill names stop working:
+
+| Old skill | New path |
+|---|---|
+| `design:colors` | `skills/design/references/colors.md` |
+| `design:contrast` | `skills/design/references/contrast.md` |
+| `design:motion` | `skills/design/references/motion.md` |
+| `design:patterns` | `skills/design/references/patterns.md` |
+| `design:responsive` | `skills/design/references/responsive.md` |
+| `design:typography` | `skills/design/references/typography.md` |
+| `design:figma` | `skills/design/references/figma.md` |
+| `design:figcraft` | `skills/design/references/figcraft.md` |
+
+- The assets of the moved skills are in `skills/design/assets/`: `theme.css`, `figma.mcp.example.json` and `figcraft.mcp.example.json`.
+- Each entry-skill description has 300 characters or less. It starts with the main use, then "Use when".
+- `scripts/verify.py` guards the structure. Only the entry skills are visible, each description has 300 characters or less, each reference is linked from a SKILL.md and links no other reference, a long reference starts with a table of contents, and no file names a moved skill.
+- `scripts/skill-budget.ts` prints the skills visible to Claude and their description characters.
+
 ## 0.1.0 — 2026-11-02
 
 Initial version. Repository history begins with this system; no earlier bug-fix release is recorded.

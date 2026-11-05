@@ -56,6 +56,7 @@ Inspect session tools, local binaries and existing project MCP settings. Configu
 ```bash
 python3 scripts/verify.py
 claude plugin validate .
+node scripts/skill-budget.ts
 ```
 
-The checks cover packaging, local links, exact upstream blobs, opaque sample color pairs and the plugin manifest. They do not establish that a consuming application's UI, connectors or native engine work end to end.
+The checks cover packaging, the skill structure, local links, exact upstream blobs, opaque sample color pairs and the plugin manifest. They do not establish that a consuming application's UI, connectors or native engine work end to end.

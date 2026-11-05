@@ -1,15 +1,8 @@
----
-name: colors
-description: Define semantic background, surface, foreground, action and status tokens across supported themes. Use for palettes, nested containers, color roles or theme consistency.
-argument-hint: "[scope]"
-user-invocable: false
----
-
 # Semantic color pairs
 
 **Rule:** alternate two neutral background roles as containers nest: `bg-1 → bg-2 → bg-1 → bg-2`. Use the foreground paired with the chosen background. A semantic name is a contract, not proof of contrast.
 
-Read [the shared workflow](../design/references/workflow.md). Use bundled Impeccable's colorize/extract playbook as relevant. Read `design:contrast` for measurement.
+Read the shared workflow (`workflow.md` in this folder) with the Read tool. Use the colorize and extract playbooks of the bundled Impeccable as relevant. For measurement, read `contrast.md` in this folder with the Read tool.
 
 ## Roles
 
@@ -32,7 +25,7 @@ Map these conceptual roles to existing tokens rather than renaming the project's
 6. Separate decorative `--separator` from `--control-border` when a boundary is required to identify a field. Define links, selection and focus explicitly. Status also needs text, an icon or another non-color cue.
 7. Apply the same roles in supported themes, with values selected and verified per theme. Do not add a dark theme to a light-only project without a requirement.
 
-Use [the starter theme](assets/theme.css) only for an explicitly new system or requested seed. It is a neutral example with local values, not a universal identity. Extend semantic action/status roles using current needs, then measure real rendered states.
+Use [the starter theme](../assets/theme.css) only for an explicitly new system or requested seed. It is a neutral example with local values, not a universal identity. Extend semantic action/status roles using current needs, then measure real rendered states.
 
 ```css
 .page, .panel__group {

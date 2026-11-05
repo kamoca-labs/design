@@ -1,15 +1,8 @@
----
-name: contrast
-description: Measure text, control and focus contrast on actual surfaces, themes and interaction states. Use for readability, muted text, colored backgrounds or accessible contrast checks.
-argument-hint: "[screen or component]"
-user-invocable: false
----
-
 # Contrast on the rendered surface
 
 **Rule:** measure the actual foreground against the background it is displayed on. A pair of variables does not ensure a passing ratio.
 
-Read [the shared workflow](../design/references/workflow.md) and `design:colors` when tokens change. Apply bundled Impeccable's audit playbook to the affected scope.
+Read the shared workflow (`workflow.md` in this folder) with the Read tool. When tokens change, also read `colors.md` in this folder. Apply bundled Impeccable's audit playbook to the affected scope.
 
 1. Identify text, placeholder, link, icon, control boundary, selected-state indicator and focus indicator pairs. Resolve computed colors after inheritance, alpha compositing, overlays and theme changes.
 2. Use WCAG 2.2 AA as the baseline unless the project requires more: normal text at least 4.5:1; large text at least 3:1 (24 CSS px regular, or approximately 18.67 CSS px bold). Do not round a failing ratio up. Thin fonts can need additional margin for readability.
