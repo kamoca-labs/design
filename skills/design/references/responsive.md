@@ -1,15 +1,8 @@
----
-name: responsive
-description: Design and verify responsive screens using project breakpoints, content constraints and container sizes. Applies to every UI change and its relevant states.
-argument-hint: "[screen or component]"
-user-invocable: false
----
-
 # Responsive at every state
 
 **Rule:** every interface works across its supported widths; alternate states follow the same responsive contract as the main screen.
 
-Read [the shared workflow](../design/references/workflow.md) and bundled adapt/layout playbooks. Inspect existing breakpoint tokens, utilities, media/container queries and supported platform constraints before adding new values.
+With the Read tool, read the shared workflow (`workflow.md` in this folder) and the bundled adapt and layout playbooks. Inspect existing breakpoint tokens, utilities, media/container queries and supported platform constraints before adding new values.
 
 1. Start from the narrow usable layout, then add space and structure at content-driven breakpoints. Reuse the project's existing breakpoint names/values; do not scatter arbitrary pixel thresholds through components. If none exist, propose a small shared scale and validate it against the real layouts before documenting it.
 2. Record width ranges, container limits, grid columns, gutters and changes in navigation, tables, forms and overlays in DESIGN.md. Use container queries for reusable components when their own available width, rather than viewport width, determines layout and the project supports them.

@@ -1,6 +1,6 @@
 ---
 name: style
-description: Iterate on visual-only UI changes using bundled Impeccable and the project design system, without a behavior specification or prior red test. Behavior changes follow craft:atdd when available.
+description: Iterates on visual-only UI changes with the bundled Impeccable and the project design system, without a behavior specification or a red test first. Use when a change alters only the look of a screen. Behavior changes follow craft:atdd when it is installed.
 argument-hint: "<what must change on the screen>"
 ---
 
@@ -10,8 +10,8 @@ A visual-only change is reviewed on the rendered screen. Use the project system,
 
 Read [the shared workflow](../design/references/workflow.md), including bundled Impeccable loading. A separately installed Impeccable plugin is not required.
 
-1. Resolve the visual scope and read DESIGN.md plus affected components/tokens. Load the appropriate bundled playbook and the relevant color, contrast, typography, pattern or motion skills.
-2. Read `design:states`, `design:responsive` and `design:mockup`. Prepare the proposed change in an isolated artifact or Figma/FigCraft draft, including affected states and breakpoint ranges. Iterate there until the user explicitly approves the current proposal; then apply the approved change to the product and inspect the rendered result. Reuse valid approval already supplied for the same proposal/scope.
+1. Resolve the visual scope and read DESIGN.md plus affected components/tokens. Load the appropriate bundled playbook. Read the relevant references with the Read tool: [colors.md](../design/references/colors.md), [contrast.md](../design/references/contrast.md), [typography.md](../design/references/typography.md), [patterns.md](../design/references/patterns.md) or [motion.md](../design/references/motion.md).
+2. Load `design:states` and `design:mockup` with the Skill tool. Read [responsive.md](../design/references/responsive.md) with the Read tool. Prepare the proposed change in an isolated artifact or Figma/FigCraft draft, including affected states and breakpoint ranges. Iterate there until the user explicitly approves the current proposal. Then apply the approved change to the product and inspect the rendered result. Reuse valid approval already supplied for the same proposal/scope.
 3. Iterate on feedback within the approved scope; substantial proposal changes return to mockup review. Do not write Given/When/Then or a red test for a purely visual preference. Do not use automated assertions to lock in a font, color, exact size, spacing, radius, shadow, animation duration or CSS class.
 4. When the user accepts the screen, run the existing filtered behavior/component/E2E checks relevant to the touched files, following project execution rules. Fix confirmed behavioral regressions within scope and perform at most one confirmation pass. Report visual evidence and any remaining gaps.
 
@@ -23,7 +23,7 @@ For mixed features, use the order the user requested. If the choice materially c
 
 ## Motion and loading
 
-Read `design:motion` for transitions. Entry/exit, expansion, modal opacity/transform and loading feedback use the shared tokens and the project's supported techniques. Preserve useful content and reserve space to avoid load shifts. A skeleton is an option, not the default. Respect reduced motion and keep focus and actions usable when animation is skipped or interrupted.
+For transitions, read [motion.md](../design/references/motion.md) with the Read tool. Entry/exit, expansion, modal opacity/transform and loading feedback use the shared tokens and the project's supported techniques. Preserve useful content and reserve space to avoid load shifts. A skeleton is an option, not the default. Respect reduced motion and keep focus and actions usable when animation is skipped or interrupted.
 
 ## Verification boundary
 

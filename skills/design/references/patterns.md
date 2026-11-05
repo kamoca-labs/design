@@ -1,15 +1,8 @@
----
-name: patterns
-description: Define consistent interface patterns for navigation, forms, tables, filters, dialogs, notifications and alternate states using existing components.
-argument-hint: "[pattern or scope]"
-user-invocable: false
----
-
 # Interface patterns
 
 **Rule:** equivalent user tasks have equivalent interaction and visual patterns across the product.
 
-Read [the shared workflow](../design/references/workflow.md). Inspect existing components and real usage before inventing a new pattern. Load `design:states` and `design:responsive` for the affected screen.
+Read the shared workflow (`workflow.md` in this folder) with the Read tool. Inspect existing components and real usage before inventing a new pattern. For the affected screen, load `design:states` with the Skill tool and read `responsive.md` in this folder with the Read tool.
 
 | Pattern | Define |
 |---|---|

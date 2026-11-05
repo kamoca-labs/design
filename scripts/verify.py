@@ -12,17 +12,16 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+ENTRY = ('connect', 'design', 'mockup', 'review', 'setup', 'states', 'style', 'system')
+MOVED = ('colors', 'contrast', 'figcraft', 'figma', 'motion', 'patterns', 'responsive', 'typography')
+DESCRIPTION_LIMIT = 300
 
 
 def check_package():
     manifest = json.loads((ROOT / '.claude-plugin/plugin.json').read_text())
     assert manifest['name'] == 'design'
     assert (ROOT / manifest['icon']).is_file(), 'Plugin icon missing'
-    expected = {
-        'design', 'setup', 'style', 'states', 'system', 'connect', 'review',
-        'colors', 'contrast', 'typography', 'motion', 'patterns', 'responsive',
-        'figma', 'figcraft', 'mockup',
-    }
+    expected = set(ENTRY)
     actual = {p.parent.name for p in (ROOT / 'skills').glob('*/SKILL.md')}
     assert actual == expected, f'Skill inventory mismatch: {actual ^ expected}'
     for path in (ROOT / 'skills').glob('*/SKILL.md'):
@@ -39,6 +38,35 @@ def check_package():
             target = link.split('#', 1)[0]
             assert (path.parent / target).exists(), f'Broken link: {path}: {link}'
     print(f'Package: {len(actual)} skills, manifest, icon and local links verified')
+
+
+def check_structure():
+    skills = {p.parent.name: p.read_text() for p in (ROOT / 'skills').glob('*/SKILL.md')}
+    visible = sorted(s for s, text in skills.items()
+                     if not re.search(r'^disable-model-invocation: true$', text, re.M))
+    assert visible == sorted(ENTRY), f'Only the entry skills are visible to Claude: {visible}'
+    for skill, text in skills.items():
+        hidden = re.search(r'^disable-model-invocation: true$', text, re.M)
+        assert hidden or not re.search(r'^user-invocable: false$', text, re.M), (
+            f'user-invocable: false saves no context: {skill}'
+        )
+        description = re.search(r'^description: (.*)$', text, re.M).group(1)
+        assert len(description) <= DESCRIPTION_LIMIT, f'Description over {DESCRIPTION_LIMIT}: {skill}'
+    linked = '\n'.join(skills.values())
+    references = sorted((ROOT / 'skills').glob('*/references/*.md'))
+    for path in references:
+        text = path.read_text()
+        assert f'references/{path.name}' in linked, f'Reference not linked from a SKILL.md: {path}'
+        for link in re.findall(r'\]\(([^)#]+\.md)', text):
+            target = (path.parent / link).resolve()
+            assert target.parent.name != 'references', f'Reference links a reference: {path}: {link}'
+        if text.count('\n') > 100:
+            assert re.search(r'^## Contents$', text[:600], re.M), f'Missing table of contents: {path}'
+    pattern = re.compile(r'design:(' + '|'.join(MOVED) + r')\b(?!-)')
+    for path in [ROOT / 'README.md', ROOT / 'USAGE.md', *(ROOT / 'skills').rglob('*.md')]:
+        found = pattern.search(path.read_text())
+        assert not found, f'Moved skill named as a skill: {path}: {found.group(0)}'
+    print(f'Structure: {len(visible)} entry skills, {len(references)} references verified')
 
 
 def check_upstream():
@@ -77,7 +105,7 @@ def ratio(first, second):
 
 
 def check_sample_colors():
-    css = (ROOT / 'skills/colors/assets/theme.css').read_text()
+    css = (ROOT / 'skills/design/assets/theme.css').read_text()
     css = re.sub(r'/\*.*?\*/', '', css, flags=re.S)
     blocks = re.findall(r'([^{}]+)\{([^{}]*)\}', css)
     assert len(blocks) == 2, 'Sample verifier expects two flat theme blocks'
@@ -104,6 +132,7 @@ def check_sample_colors():
 
 def main():
     check_package()
+    check_structure()
     check_upstream()
     check_sample_colors()
 

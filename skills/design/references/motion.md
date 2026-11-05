@@ -1,15 +1,8 @@
----
-name: motion
-description: Design purposeful transitions, loading feedback and interaction animation with shared tokens, interruption handling and reduced-motion alternatives.
-argument-hint: "[scope]"
-user-invocable: false
----
-
 # Purposeful motion
 
 **Rule:** motion explains a change, maintains continuity or gives feedback. Record its purpose and reduced-motion behavior.
 
-Read [the shared workflow](../design/references/workflow.md) and bundled animate playbook. Inspect existing tokens and component transitions.
+With the Read tool, read the shared workflow (`workflow.md` in this folder) and the bundled animate playbook. Inspect existing tokens and component transitions.
 
 1. Identify the trigger, start/end states, animated properties, duration, easing, interruption behavior and semantic/focus outcome. Cover entry, exit, expansion, progress and validation where applicable.
 2. Reuse shared motion tokens. Choose timing by distance, complexity and task; do not impose one duration or curve on every interaction.

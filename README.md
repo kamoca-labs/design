@@ -50,20 +50,21 @@ The plugin extends pinned Impeccable guidance with setup, alternating background
 
 Plugin commands carry the prefix: `/design:design`, not `/design` alone.
 
-### Sub-skills
+### References
 
-These stay out of the slash menu (`user-invocable: false`). Entry points load the relevant skills through the Skill tool. State and responsive assessment apply to every UI change.
+These files are not skills. They are not in the skill listing, so they cost no context until Claude reads them. The entry skills link them, and Claude reads only the file that the case needs. State and responsive assessment apply to every UI change.
 
-| Skill | Topic |
+| Reference | Topic |
 |---|---|
-| `design:colors` | Alternating neutral backgrounds, paired foregrounds, actions, statuses and themes |
-| `design:contrast` | Measured text, control and focus contrast on actual backgrounds |
-| `design:typography` | Text roles, loading, hierarchy, reading, localization and numeric content |
-| `design:patterns` | Navigation, forms, tables, filters, dialogs, feedback and assets |
-| `design:motion` | Purposeful animation, shared tokens, interruption and reduced motion |
-| `design:responsive` | Shared breakpoints, content-driven adaptation and intermediate widths |
-| `design:figma` | Structured context, variables, assets, component mappings and requested canvas work |
-| `design:figcraft` | Frames, auto layout, components, variants, prototypes and rendered checks |
+| `skills/design/references/workflow.md` | Shared context, approval and verification workflow |
+| `skills/design/references/colors.md` | Alternating neutral backgrounds, paired foregrounds, actions, statuses and themes |
+| `skills/design/references/contrast.md` | Measured text, control and focus contrast on actual backgrounds |
+| `skills/design/references/typography.md` | Text roles, loading, hierarchy, reading, localization and numeric content |
+| `skills/design/references/patterns.md` | Navigation, forms, tables, filters, dialogs, feedback and assets |
+| `skills/design/references/motion.md` | Purposeful animation, shared tokens, interruption and reduced motion |
+| `skills/design/references/responsive.md` | Shared breakpoints, content-driven adaptation and intermediate widths |
+| `skills/design/references/figma.md` | Structured context, variables, assets, component mappings and requested canvas work |
+| `skills/design/references/figcraft.md` | Frames, auto layout, components, variants, prototypes and rendered checks |
 
 ## Rules
 
@@ -105,18 +106,19 @@ The root CLAUDE.md is maintainer guidance; runtime instructions live in skills. 
 | Path | Role |
 |---|---|
 | `.claude-plugin/plugin.json` | Metadata and version |
-| `skills/<command>/SKILL.md` | Public commands and private domain guidance |
-| `skills/design/references/workflow.md` | Shared context, approval and verification workflow |
+| `skills/<command>/SKILL.md` | Entry skills, one for each public command |
+| `skills/design/references/` | Shared workflow and domain references that the entry skills link |
 | `skills/setup/assets/DESIGN.md` | Project-system template |
 | `skills/states/assets/surface.md` | State contract template |
-| `skills/colors/assets/theme.css` | Paired neutral-background example |
-| `skills/{figma,figcraft}/assets/mcp.example.json` | Optional connector configuration fragments |
+| `skills/design/assets/theme.css` | Paired neutral-background example |
+| `skills/design/assets/{figma,figcraft}.mcp.example.json` | Optional connector configuration fragments |
 | `upstream/impeccable/` and `upstream.lock.json` | Unmodified pinned distribution and inventory |
-| `scripts/verify.py` | Static package, link, upstream-integrity and sample-contrast checks |
+| `scripts/verify.py` | Static package, skill structure, link, upstream-integrity and sample-contrast checks |
+| `scripts/skill-budget.ts` | Prints the skills visible to Claude and the sum of their description characters |
 | [USAGE.md](USAGE.md) | Workflow examples |
 | [CHANGELOG.md](CHANGELOG.md) | Release notes |
 
-Run `python3 scripts/verify.py` and `claude plugin validate .`. These do not prove live connector behavior, rendered layouts or application-wide accessibility.
+Run `python3 scripts/verify.py` and `claude plugin validate .`. Run `node scripts/skill-budget.ts` to see the listing cost. These do not prove live connector behavior, rendered layouts or application-wide accessibility.
 
 ## Sources and licensing
 

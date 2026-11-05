@@ -24,7 +24,7 @@ This local gate takes precedence over an upstream playbook's instruction to buil
 
 Read `design:states` for every UI change. For new screens and substantial changes, persist the matrix with a relative link from DESIGN.md. For a small refinement, reuse the existing matrix or assess the affected states in the work report. An unrelated missing screen becomes a finding, not extra implementation work.
 
-Read `design:responsive` for every UI change. Reuse the project's breakpoint scale, check intermediate widths and the edges of changed breakpoints, and cover representative alternate states. Record the widths actually checked.
+Read `responsive.md` in this folder with the Read tool for every UI change. Reuse the project's breakpoint scale, check intermediate widths and the edges of changed breakpoints, and cover representative alternate states. Record the widths actually checked.
 
 The design workflow specifies interaction behavior. When implementation changes business rules, handlers, data, API calls or state transitions, follow the project's behavior/test workflow (including `craft:atdd` when installed and applicable). For visual-only product edits, explicitly load `design:style` with the Skill tool before editing components, even when the user entered through the design hub; the craft hook checks the loaded flow, not a prose mention. Do not edit or bypass craft hooks from this plugin. If an older installed hook does not recognize design:style, report the exact conflict rather than claiming compatibility.
 
