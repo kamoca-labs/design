@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.1 (2026-11-13)
+
+### Improvements
+
+- The descriptions of `review` and `states` say when to use the skill and when not to: `review` is not for building or redesigning a screen, and `states` is not for visual styling.
+
 ## 0.2.0 (2026-11-05)
 
 ### Changed
