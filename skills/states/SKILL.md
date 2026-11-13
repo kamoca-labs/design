@@ -1,6 +1,6 @@
 ---
 name: states
-description: Defines and verifies complete screen and control variants, such as normal, first use, empty, no results, loading, success, error, offline and permission. Use when a screen or flow needs a state contract or a state is missing.
+description: Defines and verifies complete screen and control states such as first use, empty, no results, loading, success, error, offline and permission. Use when a screen or flow needs a state contract, or a state is missing or looks broken. Not for visual styling.
 argument-hint: "[screen or flow]"
 ---
 
