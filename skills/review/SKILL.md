@@ -1,6 +1,6 @@
 ---
 name: review
-description: Reviews rendered UI for system consistency, contrast, typography, responsive layout, motion and complete states. Reports findings and changes code only when the user asks for fixes. Use when asked to review, audit or check an interface.
+description: Reviews rendered UI for system consistency, contrast, typography, responsive layout, motion and states. Reports findings and changes code only when asked for fixes. Use when asked to review, audit or check an interface. Not for building or redesigning a screen.
 argument-hint: "[scope]"
 ---
 
