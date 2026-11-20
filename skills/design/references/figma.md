@@ -10,4 +10,4 @@ For a design URL, resolve the exact file/node. Obtain structured context and a v
 
 Map page backgrounds, surface levels and foreground pairs to project roles. Compare typography, breakpoint adaptations and screen states with DESIGN.md. A single desktop frame does not define mobile, empty, loading or error behavior; record gaps and design the in-scope variants.
 
-For requested canvas work, verify actual write capabilities and target permissions, work in the requested file/draft, and read/render back the result. Do not claim the connector can write merely because it can fetch context. Record node links and unresolved fidelity differences.
+For requested canvas work, verify actual write capabilities and target permissions, work in the requested file/draft, and read/render back the result. Lay out a screen proposal as the state board described in `figcraft.md` (same folder): every applicable state at every breakpoint, in every theme. Do not claim the connector can write merely because it can fetch context. Record node links and unresolved fidelity differences.
