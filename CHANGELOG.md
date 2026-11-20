@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.3.0 (2026-11-20)
+
+### Changed
+
+- `mockup` asks for every applicable state at every width of the breakpoint scale, plus a base width, in every theme. Before, it asked only for the narrow, medium and wide variants.
+- `states` records coverage per width, including states that exist only at some widths, and runs the content extremes at every width. Representative sampling stays for implementation verification.
+
+### Improvements
+
+- `references/figcraft.md` documents the state board (theme blocks, one row per width, numbered states in the same order, frame naming, overlays, stress test), the editing steps that build it and an offline coverage audit of the `.figcraft` zip.
+- `references/responsive.md` asks for a per-width table in DESIGN.md and lists typical width-driven switches. `references/figma.md` points to the same board.
+
 ## 0.2.1 (2026-11-13)
 
 ### Improvements
