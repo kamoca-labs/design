@@ -64,7 +64,7 @@ These files are not skills. They are not in the skill listing, so they cost no c
 | `skills/design/references/motion.md` | Purposeful animation, shared tokens, interruption and reduced motion |
 | `skills/design/references/responsive.md` | Shared breakpoints, content-driven adaptation and intermediate widths |
 | `skills/design/references/figma.md` | Structured context, variables, assets, component mappings and requested canvas work |
-| `skills/design/references/figcraft.md` | Frames, auto layout, components, variants, prototypes and rendered checks |
+| `skills/design/references/figcraft.md` | State board (every state at every breakpoint, in every theme), frames, auto layout, components, prototypes, rendered checks and offline coverage audit |
 
 ## Rules
 
