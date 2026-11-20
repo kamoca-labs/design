@@ -36,7 +36,7 @@ Load an entry skill with the Skill tool. Read a reference with the Read tool. Th
 | Transitions or interaction feedback | [references/motion.md](references/motion.md) |
 | Breakpoints and layout across widths | [references/responsive.md](references/responsive.md) |
 | Figma context or canvas work | [references/figma.md](references/figma.md) |
-| FigCraft frames, components or prototypes | [references/figcraft.md](references/figcraft.md) |
+| FigCraft frames, state boards, components or prototypes | [references/figcraft.md](references/figcraft.md) |
 
 For an upstream action, load its playbook through the shared workflow and honor the proposal gate. For a new screen, include its state matrix in the mockup. For a narrow refinement, check the existing states affected by the proposal. After approval and implementation, run scoped visual verification and report evidence and remaining gaps.
 
